@@ -1,0 +1,31 @@
+<div class="logo_background">
+  <h2 class="logo" align="center">Sahngah</h2>
+</div>
+
+<div ng-controller="post_controller_one">
+  <form>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select class="form-control" ng-model="newPost.category">
+        <option value="lasvegas">Las Vegas</option>
+        <option value="losangeles">Los Angeles</option>
+        <option>Whatever</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" name="title" class="form-control" placeholder="title" ng-model="newPost.title">
+    </div>
+    <div class="form-group">
+      <label for="photo">Photo Link</label>
+      <input type="text" name="photo" class="form-control" placeholder="photo link" ng-model="newPost.photo">
+    </div>
+    <textarea class="form-control" rows="8" cols="40" placeholder="description" ng-model="newPost.description"></textarea>
+    <button type="submit" class="btn btn-default" ng-click="newnew()">Submit</button>
+  </form>
+  <div align="center">
+  <a href="#/">Go Back To the Main Page</a>
+</div>
+</div>

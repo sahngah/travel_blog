@@ -1,0 +1,38 @@
+<div ng-controller="post_controller_one">
+  <div class="logo_background">
+    <h2 class="logo" align="center">Sahngah</h2>
+  </div>
+  <div align="center">
+    <h1 class="post_title">{{onePost.title}}</h1>
+    <img class="post_image" width=300px height=300px src="{{onePost.photo}}">
+    <p class="post_description">{{onePost.description}}</p>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select class="form-control" ng-model="editPost.category">
+        <option value="lasvegas">Las Vegas</option>
+        <option value="losangeles">Los Angeles</option>
+        <option>Whatever</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" name="title" class="form-control" placeholder="title" ng-model="editPost.title">
+    </div>
+    <div class="form-group">
+      <label for="photo">Photo Link</label>
+      <input type="text" name="photo" class="form-control" placeholder="photo link" ng-model="editPost.photo">
+    </div>
+    <textarea class="form-control" rows="8" cols="40" placeholder="description" ng-model="editPost.description"></textarea>
+    <button type="submit" class="btn btn-default" ng-click="editThisPost(onePost._id)">Submit</button>
+  </form>
+  <div align="center">
+  <a href="#/">Home |</a>
+  <a href="#/post/new">New Post |</a>
+  <a href="#/{{onePost.category}}">Previous Category</a>
+</div>
+</div>

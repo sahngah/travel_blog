@@ -1,0 +1,36 @@
+<div ng-controller="user_controller">
+  <div class="logo_background">
+    <h2 class="logo" align="center">Sahngah</h2>
+  </div>
+  <h1 class="post_title">Already Registered? Log In:</h1>
+  <form>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" placeholder="Username" ng-model="oldUser.username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password" ng-model="oldUser.password">
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="login()">Submit</button>
+</form>
+  <h1 class="post_title">New Here? Register:</h1>
+  <form>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" placeholder="Username" ng-model="newUser.username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password" ng-model="newUser.password">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" placeholder="Email" ng-model="newUser.email" id="email">
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="createNewUser()">Submit</button>
+</form>
+<div align="center">
+  <a href="#/">Home</a>
+</div>
+</div>
