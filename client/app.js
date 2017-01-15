@@ -11,7 +11,7 @@ app.config(function($routeProvider){
   .when('/post/new', {
     templateUrl: './partials/new.html'
   })
-  .when('/link_2', {
+  .when('/losangeles', {
     templateUrl: './partials/link2.html'
   })
   .when('/post/edit/:id', {
