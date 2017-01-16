@@ -20,4 +20,13 @@ module.exports = function(app){
   app.post('/user/new', function(req, res){
     user.createNewUser(req, res);
   })
+  app.post('/user/login', function(req, res){
+    user.login(req, res);
+  })
+  app.get('/user/check', function(req, res){
+    user.check(req, res);
+  })
+  app.get('/user/logout', function(req, res){
+    user.logout(req, res);
+  })
 }

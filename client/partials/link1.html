@@ -19,13 +19,21 @@
     <h1 class="post_title">{{post.title}}</h1>
     <img class="post_image" width=65% height=65% src="{{post.photo}}">
     <p class="post_description">{{post.description}}</p>
-    <!-- <button type="button" id="toTheTop" class="btn btn-success" value="Scroll Top" ng-click="toTheTop()">Go To the Top</button> -->
-    <button class="btn btn-default"><a href="#/post/edit/{{post._id}}">Edit this post</a></button>
-    <button type="button" name="delete" class="btn btn-danger" ng-click="delete(post._id)">Delete this post</button>
+    <div ng-if="curUser.username == 'sahngah'">
+      <!-- <button type="button" id="toTheTop" class="btn btn-success" value="Scroll Top" ng-click="toTheTop()">Go To the Top</button> -->
+      <button class="btn btn-default"><a href="#/post/edit/{{post._id}}">Edit this post</a></button>
+      <button type="button" name="delete" class="btn btn-danger" ng-click="delete(post._id)">Delete this post</button>
+    </div>
   </div>
   </div>
-    <div align="center">
-    <a href="#/">Home |</a>
-    <a href="#/post/new">New Post</a>
+  <div align="center">
+    <ul class="navbar">
+      <li><a href="#/">Home |</a></li>
+      <li><a href="#/user/login">Login | </a></li>
+      <li><div class="homebar" ng-if="curUser.username == 'sahngah'">
+      <a href="#/post/new">New Post |</a>
+      </div></li>
+      <li><a href="/user/logout">Logout</a></li>
+    </ul>
   </div>
 </div>
