@@ -11,6 +11,9 @@ app.config(function($routeProvider){
   .when('/post/new', {
     templateUrl: './partials/new.html'
   })
+  .when('/newyork', {
+    templateUrl: './partials/newyork.html'
+  })
   .when('/losangeles', {
     templateUrl: './partials/link2.html'
   })
