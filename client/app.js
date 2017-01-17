@@ -23,6 +23,9 @@ app.config(function($routeProvider){
   .when('/user/login', {
     templateUrl: './partials/login.html'
   })
+  .when('/about', {
+    templateUrl: './partials/about.html'
+  })
   .otherwise({
     redirectTo: '/'
   })

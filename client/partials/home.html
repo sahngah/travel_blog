@@ -1,6 +1,11 @@
 <div ng-controller='post_controller_one'>
   <h1 id='front_title'>Sahngah</h1>
-  <h3 class="front_description">web developer. traveler. cat lover. shopper.</h3><hr>
+  <a style="color:black" href="#/about">
+    <div class="icon">
+    <!-- <i class="material-icons md-36">face</i> -->
+    <p class="icon-description">More About Sahngah</p>
+  </div></a>
+  <h3 class="front_description"><a class="web_link" href="#/about"><b>web developer.</b></a> traveler. cat lover. shopper.</h3><hr>
   <img width=99.8% height=99.8% src="https://scontent.fsnc1-5.fna.fbcdn.net/v/t31.0-8/16107420_1289901014406748_8803862590385445449_o.jpg?oh=c04d7961c174cb4f91ed1676e30a35d7&oe=59249E7C" alt="">
   <div align="center">
     <hr><a class="category_link" href='/#/lasvegas'>Las Vegas</a>
@@ -20,6 +25,7 @@
       <li><div class="homebar" ng-if="curUser.username == 'sahngah'">
       <a href="#/post/new">New Post |</a>
       </div></li>
+      <li><a href="#/about">About |</a></li>
       <li><a href="/user/logout">Logout</a></li>
     </ul>
   </div>
