@@ -10,10 +10,13 @@ app.controller('post_controller_one', ['$scope', 'post_factory_one', '$routePara
     $scope.onePost = data;
   })
   $scope.newnew = function(){
-    PF.newpost($scope.newPost, function(data){
+    if($scope.curUser.username != 'sahngah'){
+      $location.path('/');
+    }else{PF.newpost($scope.newPost, function(data){
       $scope.posts = data;
     });
     $location.path('/' + $scope.newPost.category);
+    }
   }
   $scope.delete = function(id){
     PF.delete(id, function(data){
