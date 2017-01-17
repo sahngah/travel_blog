@@ -3,18 +3,22 @@ var Post = mongoose.model('Post')
 
 module.exports = {
   addpost: function(req, res){
-    console.log('in my post controller1', req.body);
-    var post = new Post(req.body);
-    post.save(function(err){
-      if(err){
-        console.log('the error is...', err);
-        res.json({status:false})
-      }else{
-        Post.find({}, function(err, data){
-          res.json(data);
-        })
-      }
-    })
+    if(req.body.userid != req.session.user._id){
+      res.json({status:false})
+    }else{
+      console.log('in my post controller1', req.body);
+      var post = new Post(req.body);
+      post.save(function(err){
+        if(err){
+          console.log('the error is...', err);
+          res.json({status:false})
+        }else{
+          Post.find({}, function(err, data){
+            res.json(data);
+          })
+        }
+      })
+    }
   },
   loadposts: function(req, res){
     Post.find({}, function(err, data){

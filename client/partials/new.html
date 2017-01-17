@@ -23,6 +23,7 @@
       <input type="text" name="photo" class="form-control" placeholder="photo link" ng-model="newPost.photo">
     </div>
     <textarea class="form-control" rows="8" cols="40" placeholder="description" ng-model="newPost.description"></textarea>
+    <input type="hidden" name="username" value="{{curUser._id}}">
     <button type="submit" class="btn btn-default" ng-click="newnew()">Submit</button>
   </form>
   <div align="center">
