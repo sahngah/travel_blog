@@ -20,8 +20,10 @@ app.controller('post_controller_one', ['$scope', 'post_factory_one', '$routePara
       $scope.posts = data;
     });
   }
-  $scope.editThisPost = function(id){
-    PF.editThisPost(id, $scope.editPost, function(data){
+  $scope.editThisPost = function(postid, userid){
+    $scope.editPost.postid = postid;
+    $scope.editPost.userid = userid;
+    PF.editThisPost($scope.editPost, function(data){
       $scope.onePost = data;
     });
     $location.path('/post/edit/' + $scope.onePost._id + '/');

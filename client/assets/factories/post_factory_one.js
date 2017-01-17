@@ -27,9 +27,14 @@ app.factory('post_factory_one', function($http, $location){
       cb(output);
     })
   }
-  factory.editThisPost = function(id, post, cb){
-    $http.post('/post/edit/' +id, post).success(function(output){
-      cb(output);
+  factory.editThisPost = function(post, cb){
+    $http.post('/post/edit/' + post.postid , post).success(function(output){
+      if(output != null){
+        cb(output);
+      }else{
+        alert('something went wrong! unable to edit')
+        $location.path('/');
+      }
     })
   }
   return factory;

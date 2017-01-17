@@ -46,9 +46,21 @@ module.exports = {
     })
   },
   editPost: function(req, res){
-    console.log('request.body', req.body);
-    Post.update({_id: req.params.id}, req.body, function(err, data){
-      res.json(data);
+    User.findOne({username: "sahngah"}, function(err, admin){
+      if(err){
+        console.log(err);
+      }else{
+        req.session.admin = admin;
+        if(req.body.userid != req.session.admin._id){
+          res.json(null);
+        }else{
+          delete req.body.userid;
+          delete req.body.postid;
+          Post.update({_id: req.params.id}, req.body, function(err, data){
+            res.json(data);
+          })
+        }
+      }
     })
   }
 }
