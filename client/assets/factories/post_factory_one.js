@@ -1,6 +1,7 @@
 app.factory('post_factory_one', function($http, $location){
   var factory = {};
   factory.newpost = function(data, cb){
+    console.log("in factory!!!! data data data-----", data);
     $http.post('/post/new', data).success(function(output){
       if(output.status == false){
         alert('something went wrong!')

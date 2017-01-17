@@ -4,14 +4,14 @@ var Post = mongoose.model('Post')
 module.exports = {
   addpost: function(req, res){
     if(req.body.userid != req.session.user._id){
-      res.json({status:false})
+      res.status(401).json({status:false});
     }else{
-      console.log('in my post controller1', req.body);
+      delete req.body.userid;
       var post = new Post(req.body);
       post.save(function(err){
         if(err){
           console.log('the error is...', err);
-          res.json({status:false})
+          res.status(500).json({status:false})
         }else{
           Post.find({}, function(err, data){
             res.json(data);

@@ -8,10 +8,13 @@ app.controller('post_controller_one', ['$scope', 'post_factory_one', '$routePara
   PF.onePost($routeParams.id, function(data){
     $scope.onePost = data;
   })
-  $scope.newnew = function(){
-    if($scope.newPost.userid != $scope.curUser._id){
+  $scope.newnew = function(userid){
+    console.log('in controlle rugh!!!!!', userid);
+    if(userid != $scope.curUser._id){
       $location.path('/');
-    }else{PF.newpost($scope.newPost, function(data){
+    }else{
+      $scope.newPost.userid = userid;
+      PF.newpost($scope.newPost, function(data){
       $scope.posts = data;
     });
     $location.path('/' + $scope.newPost.category);
