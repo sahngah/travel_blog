@@ -9,15 +9,11 @@ app.controller('post_controller_one', ['$scope', 'post_factory_one', '$routePara
     $scope.onePost = data;
   })
   $scope.newnew = function(userid){
-    if(userid != $scope.curUser._id){
-      $location.path('/');
-    }else{
-      $scope.newPost.userid = userid;
-      PF.newpost($scope.newPost, function(data){
-      $scope.posts = data;
+    $scope.newPost.userid = userid;
+    PF.newpost($scope.newPost, function(data){
+    $scope.posts = data;
     });
     $location.path('/' + $scope.newPost.category);
-    }
   }
   $scope.delete = function(id){
     PF.delete(id, function(data){

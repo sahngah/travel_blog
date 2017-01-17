@@ -1,24 +1,32 @@
 var mongoose = require('mongoose');
-var Post = mongoose.model('Post')
+var Post = mongoose.model('Post');
+var User = mongoose.model('User');
 
 module.exports = {
   addpost: function(req, res){
-    if(req.body.userid != req.session.user._id){
-      res.status(401).json({status:false});
-    }else{
-      delete req.body.userid;
-      var post = new Post(req.body);
-      post.save(function(err){
-        if(err){
-          console.log('the error is...', err);
-          res.status(500).json({status:false})
+    User.findOne({username: "sahngah"}, function(err, admin){
+      if(err){
+        console.log(err);
+      }else{
+        req.session.admin = admin;
+        if(req.body.userid != req.session.admin._id){
+          res.status(401).json({status:false});
         }else{
-          Post.find({}, function(err, data){
-            res.json(data);
+          delete req.body.userid;
+          var post = new Post(req.body);
+          post.save(function(err){
+            if(err){
+              console.log('the error is...', err);
+              res.status(500).json({status:false})
+            }else{
+              Post.find({}, function(err, data){
+                res.json(data);
+              })
+            }
           })
         }
-      })
-    }
+      }
+    })
   },
   loadposts: function(req, res){
     Post.find({}, function(err, data){
