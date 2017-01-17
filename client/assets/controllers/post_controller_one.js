@@ -1,7 +1,6 @@
 app.controller('post_controller_one', ['$scope', 'post_factory_one', '$routeParams', '$location', 'user_factory', function($scope, PF, $routeParams, $location, UF){
   UF.check(function(output){
     $scope.curUser = output;
-    console.log($scope.curUser);
   })
   PF.loadposts(function(data){
     $scope.posts = data;
