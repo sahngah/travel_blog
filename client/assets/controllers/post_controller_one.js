@@ -9,7 +9,6 @@ app.controller('post_controller_one', ['$scope', 'post_factory_one', '$routePara
     $scope.onePost = data;
   })
   $scope.newnew = function(userid){
-    console.log('in controlle rugh!!!!!', userid);
     if(userid != $scope.curUser._id){
       $location.path('/');
     }else{
