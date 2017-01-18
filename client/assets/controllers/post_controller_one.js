@@ -8,6 +8,12 @@ app.controller('post_controller_one', ['$scope', 'post_factory_one', '$routePara
   PF.onePost($routeParams.id, function(data){
     $scope.onePost = data;
   })
+  PF.loadComments(function(data){
+    $scope.comments = data;
+  })
+  // PF.deleteComments(function(data){
+  //   $scope.comments = data;
+  // })
   $scope.newnew = function(userid){
     $scope.newPost.userid = userid;
     PF.newpost($scope.newPost, function(data){
@@ -27,5 +33,19 @@ app.controller('post_controller_one', ['$scope', 'post_factory_one', '$routePara
       $scope.onePost = data;
     });
     $location.path('/post/edit/' + $scope.onePost._id + '/');
+  }
+  $scope.addComment = function(userid, postid){
+    $scope.newComment.userid = userid;
+    $scope.newComment.postid = postid;
+    PF.addComment($scope.newComment, function(data){
+      $scope.comment = data;
+    })
+    $location.path('/');
+  }
+  $scope.deleteComment = function(id){
+    PF.deleteComment(id, function(data){
+      $scope.comments = data;
+    })
+    $location.path('/');
   }
 }]);

@@ -16,15 +16,36 @@
   </div>
   <div ng-repeat="post in posts" align="center">
     <div class="post" ng-if="post.category == 'lasvegas'">
-    <h1 class="post_title">{{post.title}}</h1>
-    <img class="post_image" width=65% height=65% src="{{post.photo}}">
-    <p class="post_description">{{post.description}}</p>
-    <div ng-if="curUser.username == 'sahngah'">
-      <!-- <button type="button" id="toTheTop" class="btn btn-success" value="Scroll Top" ng-click="toTheTop()">Go To the Top</button> -->
-      <button class="btn btn-default"><a href="#/post/edit/{{post._id}}">Edit this post</a></button>
-      <button type="button" name="delete" class="btn btn-danger" ng-click="delete(post._id)">Delete this post</button>
+      <h1 class="post_title">{{post.title}}</h1>
+      <img class="post_image" width=65% height=65% src="{{post.photo}}">
+      <p class="post_description">{{post.description}}</p>
+      <div ng-repeat="comment in comments" align="center">
+        <div class="comment" ng-if="comment.post[0]._id == post._id">
+          <h2 class="comment_user">{{comment.user[0].username}}<small>says:</small></h2>
+          <p class="comment_content">{{comment.content}}</p>
+          <div ng-if="curUser.username == 'sahngah' || comment.user[0].username == curUser.username">
+            <button type="button" name="delete" class="btn btn-danger" ng-click="deleteComment(comment._id)">Delete this comment</button>
+          </div>
+        </div>
+      </div>
+      <div ng-if="curUser.username == 'sahngah'">
+        <!-- <button type="button" id="toTheTop" class="btn btn-success" value="Scroll Top" ng-click="toTheTop()">Go To the Top</button> -->
+        <button class="btn btn-default"><a href="#/post/edit/{{post._id}}">Edit this post</a></button>
+        <button type="button" name="delete" class="btn btn-danger" ng-click="delete(post._id)">Delete this post</button>
+      </div>
+      <div>
+        <div ng-if="!curUser.username">
+          <input class="form-control" id="disabledInput" type="text" placeholder="Login To Leave a Comment!" disabled>
+        </div>
+        <div ng-if="curUser.username != null">
+        <h3 class="comment_user">{{curUser.username[0].toUpperCase() + curUser.username.slice(1)}} says...</h3>
+        <form ng-controller="post_controller_one">
+          <textarea type="text" class="form-control" rows="3" ng-model="newComment.content"></textarea>
+          <button type="submit" class="btn btn-success" ng-click="addComment(curUser._id, post._id)">Submit</button>
+        </form>
+        </div>
+      </div>
     </div>
-  </div>
   </div>
   <div align="center">
     <ul class="navbar">

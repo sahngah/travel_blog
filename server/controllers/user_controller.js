@@ -19,6 +19,7 @@ module.exports = {
       if(err) {
         console.log('error loging in user', err);
       } else if (!user) {
+        console.log('no user');
         res.json({status: false});
       } else {
         if(user.validatePassword(req.body.password)){
@@ -26,6 +27,7 @@ module.exports = {
           req.session.save();
           res.json({status: true, user: user});
         }else{
+          console.log(err);
           res.json({status: false});
         }
       }
