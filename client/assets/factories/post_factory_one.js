@@ -18,7 +18,7 @@ app.factory('post_factory_one', function($http, $location){
     })
   };
   factory.delete = function(id, cb){
-    $http.post('/post/delete/' + id).success(function(output){
+    $http.delete('/post/delete/' + id).success(function(output){
       cb(output);
     })
   };
@@ -56,7 +56,7 @@ app.factory('post_factory_one', function($http, $location){
     })
   }
   factory.deleteComment = function(id, cb){
-    $http.post('/comment/delete/' + id).success(function(output){
+    $http.delete('/comment/delete/' + id).success(function(output){
       cb(output);
     })
   }

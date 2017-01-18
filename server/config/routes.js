@@ -9,7 +9,7 @@ module.exports = function(app){
   app.get('/yay', function(req, res){
     post.loadposts(req, res);
   })
-  app.post('/post/delete/:id', function(req, res){
+  app.delete('/post/delete/:id', function(req, res){
     post.deletepost(req, res);
   })
   app.get('/post/one/:id', function(req, res){
@@ -39,7 +39,7 @@ module.exports = function(app){
   app.get('/comment/delete', function(req, res){
     comment.deleteall(req, res);
   })
-  app.post('/comment/delete/:id', function(req, res){
+  app.delete('/comment/delete/:id', function(req, res){
     comment.deleteone(req, res);
   })
 }
