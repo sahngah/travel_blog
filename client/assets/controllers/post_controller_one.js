@@ -34,18 +34,18 @@ app.controller('post_controller_one', ['$scope', 'post_factory_one', '$routePara
     });
     $location.path('/post/edit/' + $scope.onePost._id + '/');
   }
-  $scope.addComment = function(userid, postid){
+  $scope.addComment = function(userid, postid, postcategory){
     $scope.newComment.userid = userid;
     $scope.newComment.postid = postid;
     PF.addComment($scope.newComment, function(data){
       $scope.comment = data;
     })
-    $location.path('/');
+    $location.path('/' + postcategory + '/');
   }
-  $scope.deleteComment = function(id){
+  $scope.deleteComment = function(id, postcategory){
     PF.deleteComment(id, function(data){
       $scope.comments = data;
     })
-    $location.path('/');
+    $location.path('/' + postcategory + '/');
   }
 }]);

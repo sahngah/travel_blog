@@ -24,7 +24,7 @@
         <h2 class="comment_user"><i class="material-icons" style="color:#AD7A8F">favorite</i>{{comment.user[0].username}} <small>says:</small><i class="material-icons" style="color:#AD7A8F">favorite</i></h2>
         <p class="comment_content">{{comment.content}}</p>
         <div ng-if="curUser.username == 'sahngah' || comment.user[0].username == curUser.username">
-          <button type="button" name="delete" class="btn btn-danger" ng-click="deleteComment(comment._id)">Delete this comment</button>
+          <button type="button" name="delete" class="btn btn-danger" ng-click="deleteComment(comment._id, comment.post[0].category)">Delete this comment</button>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
       <h3 class="comment_user">{{curUser.username[0].toUpperCase() + curUser.username.slice(1)}} says...</h3>
       <form ng-controller="post_controller_one">
         <textarea type="text" class="form-control" rows="3" ng-model="newComment.content"></textarea>
-        <button type="submit" class="btn btn-success" ng-click="addComment(curUser._id, post._id)">Submit</button>
+        <button type="submit" class="btn btn-success" ng-click="addComment(curUser._id, post._id,  post.category)">Submit</button>
       </form>
       </div>
     </div>
