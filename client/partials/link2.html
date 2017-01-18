@@ -21,7 +21,7 @@
     <p class="post_description">{{post.description}}</p>
     <div ng-repeat="comment in comments" align="center">
       <div class="comment" ng-if="comment.post[0]._id == post._id">
-        <h2 class="comment_user">{{comment.user[0].username}}<small>says:</small></h2>
+        <h2 class="comment_user"><i class="material-icons" style="color:#AD7A8F">favorite</i>{{comment.user[0].username}} <small>says:</small><i class="material-icons" style="color:#AD7A8F">favorite</i></h2>
         <p class="comment_content">{{comment.content}}</p>
         <div ng-if="curUser.username == 'sahngah' || comment.user[0].username == curUser.username">
           <button type="button" name="delete" class="btn btn-danger" ng-click="deleteComment(comment._id)">Delete this comment</button>

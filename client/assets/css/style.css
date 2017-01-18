@@ -79,6 +79,15 @@
 .post.about{
   padding:100px;
 }
+.comment{
+  width:65%;
+  border-top: dashed 1px black;
+}
 .comment_user{
   font-family: 'Lobster', cursive;
+  font-size:28px;
+}
+.comment_content{
+  font-family: 'Cormorant Garamond', serif;
+  font-size:15px;
 }
