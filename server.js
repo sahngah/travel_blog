@@ -7,10 +7,10 @@ var session = require('express-session');
 var imgPath = './path/img.png';
 
 app.use(express.static(path.join(__dirname + '/client')))
-app.use(express.static(path.join(__dirname + '/client/assets')))
-app.use(express.static(path.join(__dirname + '/bower_components')))
-app.use(bp.json());
-app.use(session({
+.use(express.static(path.join(__dirname + '/client/assets')))
+.use(express.static(path.join(__dirname + '/bower_components')))
+.use(bp.json())
+.use(session({
   secret: 'secretsecret',
   resave: false,
   saveUninitialized: true,
