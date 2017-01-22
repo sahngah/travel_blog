@@ -29,6 +29,24 @@ app.config(function($routeProvider){
   .when('/sanfrancisco', {
     templateUrl: './partials/sanfrancisco.html'
   })
+  .when('/miami', {
+    templateUrl: './partials/miami.html'
+  })
+  .when('/boston', {
+    templateUrl: './partials/boston.html'
+  })
+  .when('/seattle', {
+    templateUrl: './partials/seattle.html'
+  })
+  .when('/singapore', {
+    templateUrl: './partials/singapore.html'
+  })
+  .when('/cancun', {
+    templateUrl: './partials/cancun.html'
+  })
+  .when('/portland', {
+    templateUrl: './partials/portland.html'
+  })
   .otherwise({
     redirectTo: '/'
   })
