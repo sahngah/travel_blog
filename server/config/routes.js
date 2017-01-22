@@ -3,7 +3,8 @@ var user = require('./../controllers/user_controller.js');
 var comment = require('./../controllers/comment_controller.js')
 
 module.exports = function(app){
-  app.post('/post/new', post.addpost)
+  app
+  .post('/post/new', post.addpost)
   .get('/yay', post.loadposts)
   .delete('/post/delete/:id', post.deletepost)
   .get('/post/one/:id', post.onePost)
