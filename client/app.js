@@ -6,7 +6,7 @@ app.config(function($routeProvider){
     templateUrl: './partials/home.html'
   })
   .when('/lasvegas', {
-    templateUrl: './partials/link1.html'
+    templateUrl: './partials/lasvegas.html'
   })
   .when('/post/new', {
     templateUrl: './partials/new.html'
@@ -15,7 +15,7 @@ app.config(function($routeProvider){
     templateUrl: './partials/newyork.html'
   })
   .when('/losangeles', {
-    templateUrl: './partials/link2.html'
+    templateUrl: './partials/losangeles.html'
   })
   .when('/post/edit/:id', {
     templateUrl: './partials/edit.html'

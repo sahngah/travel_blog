@@ -1,3 +1,5 @@
+
+
 /*front page*/
   #front_title{
     color:#AD7A8F;
@@ -55,6 +57,12 @@
       .logo_a:hover{
         text-decoration:none;
       }
+.image_for_pc {
+  display:block;
+}
+.image_for_mobile {
+  display:none;
+}
 .post{
   border-bottom:#AD7A8F dotted 2px;
   width:60%;
@@ -79,6 +87,9 @@
 .post.about{
   padding:100px;
 }
+.post_image.mobile{
+  display:none;
+}
 .comment{
   width:65%;
   border-top: dashed 1px black;
@@ -90,4 +101,144 @@
 .comment_content{
   font-family: 'Cormorant Garamond', serif;
   font-size:15px;
+}
+
+/*Mobile Responsive Design -- Ipad / Iphone 6 plus */
+@media screen and (max-width: 768px) and (min-width: 414px){
+  .image_for_pc{
+   display:none;
+  }
+  .image_for_mobile{
+   display:block;
+  }
+  #front_title{
+    color:#AD7A8F;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    display:inline-block;
+    width:50%;
+  }
+  .icon{
+    width:15%;
+    margin-left:30%;
+    display:inline-block;
+  }
+  .icon-description{
+    /*display:block;*/
+    font-size:15px;
+    font-family: 'Megrim', cursive;
+  }
+  .web_link:hover{
+    text-decoration: none;
+  }
+  .front_description{
+    font-family: 'Quicksand', sans-serif;
+    font-size:20px;
+  }
+  .category_link{
+    padding-left:10px;
+    padding-right:10px;
+    color:#AD7A8F;
+    font-family: 'Megrim', cursive;
+    font-size: 15px;
+  }
+      .category_link:hover{
+        color:black;
+        text-decoration: none;
+        color:#7aad98;
+      }
+  .post{
+    border-bottom:#AD7A8F dotted 2px;
+    width:80%;
+    padding-bottom:30px;
+  }
+  .post_title{
+    font-family: 'Cormorant Garamond', serif;
+    font-size:39px;
+    margin-bottom:20px;
+  }
+  .post_description{
+    margin-top:20px;
+    font-size: 16px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .post.about{
+    padding:20px;
+  }
+  .post_image.pc{
+    display:none;
+  }
+  .post_image.mobile{
+    display:block;
+  }
+}
+
+/*Mobile Responsive Design -- Iphone 5 / Iphone 6 */
+@media screen and (max-width: 413px) and (min-width: 300px){
+  .image_for_pc{
+   display:none;
+  }
+  .image_for_mobile{
+   display:block;
+  }
+  #front_title{
+    color:#AD7A8F;
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+    display:inline-block;
+    width:50%;
+  }
+  .icon{
+    width:15%;
+    margin-left:30%;
+    display:inline-block;
+  }
+  .icon-description{
+    /*display:block;*/
+    font-size:13px;
+    font-family: 'Megrim', cursive;
+  }
+  .web_link:hover{
+    text-decoration: none;
+  }
+  .front_description{
+    font-family: 'Quicksand', sans-serif;
+    font-size:17px;
+  }
+  .category_link{
+    padding-left:10px;
+    padding-right:10px;
+    color:#AD7A8F;
+    font-family: 'Megrim', cursive;
+    font-size: 14px;
+  }
+      .category_link:hover{
+        color:black;
+        text-decoration: none;
+        color:#7aad98;
+      }
+  .post{
+    border-bottom:#AD7A8F dotted 2px;
+    width:85%;
+    padding-bottom:30px;
+  }
+  .post_title{
+    font-family: 'Cormorant Garamond', serif;
+    font-size:33px;
+    margin-bottom:20px;
+  }
+  .post_description{
+    margin-top:20px;
+    font-size: 15px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .post.about{
+    padding:20px;
+  }
+  .post_image.pc{
+    display:none;
+  }
+  .post_image.mobile{
+    display:block;
+  }
 }
