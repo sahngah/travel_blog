@@ -17,7 +17,8 @@
   <div ng-repeat="post in posts" align="center">
     <div class="post" ng-if="post.category == 'seattle'">
       <h1 class="post_title">{{post.title}}</h1>
-      <img class="post_image" width=65% height=65% src="{{post.photo}}">
+      <img class="post_image pc" width=65% height=65% src="{{post.photo}}">
+      <img class="post_image mobile" width=99% height=99% src="{{post.photo}}">
       <p class="post_description">{{post.description}}</p>
       <div ng-repeat="comment in comments" align="center">
         <div class="comment" ng-if="comment.post[0]._id == post._id">
